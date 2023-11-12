@@ -24,7 +24,7 @@
 Customers rely increasingly on product rating websites for making purchase decisions, and it has been proved that when rating a product, customers may be biased to follow other customers’ previous ratings of the same product (this phenomenon is know as "herding effect", see West et al. [[1]](#References)).
 
 However, it is still an open research question to understand how ratings are influenced by the size of the vendor. By using data coming from beers' reviews websites, our goal is to analyze the relationship between the vendor size (breweries in this case), and the perceived quality of their products, determined through sentiment analysis of reviews. 
-By quantifying brewery size through a [predefined metric](#Size-Index) and extracting sentiment from textual reviews, we aim to discern if there exists a correlation between these factors. Additionally, we seek to investigate the behavior of different consumer bases, addressing also the temporal dimension (how these phenomena have evolved through the years, but also through the seasons within the same year) and the spatial dimension (.
+By quantifying brewery size through a [predefined metric](#Size-Index) and extracting sentiment from textual reviews, we aim to discern if there exists a correlation between these factors. Additionally, we seek to investigate the behavior of different consumer bases, addressing also the temporal dimension (how these phenomena have evolved through the years, but also through the seasons within the same year) and the spatial dimension (how these relationships differs through states and countries).
 
 ## Research Questions
 The following questions do not comprise an exhaustive list. They serve to scope, inspire, and guide the analysis.
@@ -43,7 +43,7 @@ Size = \alpha N_r + \beta N_b + \gamma N_t
 With $N_r =$ number of reviews, $N_b =$ number of beers produced, $N_t =$ number of different types of beer produced.
 
 ## Datasets and Methods
-- The reviews under analysis come from two different rating sites, `BeerAdvocate` and `RateBeer`, with thousands of reviews that span from 2001 to 2017.
+- The reviews under analysis come from two different rating sites, `BeerAdvocate` and `RateBeer`, with thousands of reviews that span in a period from 2001 to 2017.
 
 
 ## Authors
