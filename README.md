@@ -13,9 +13,10 @@
   <ol>
     <li><a href="#Abstract">Abstract</a></li>
     <li><a href="#Research-Questions">Research Questions</a></li>
-    <li><a href="#Size-Index">Metric</a></li>
-    <li><a href="#Datasets-and-Methods">Datasets and Methods</a></li>
+    <li><a href="#Datasets">Datasets</a></li>
+    <li><a href="#Methods">Methods</a></li>
     <li><a href="#Authors">Authors</a></li>
+    <li><a href="#Organization-within-the-team">Organization within the team</a></li>
     <li><a href="#References">References</a></li>
   </ol>
 </details>
@@ -35,15 +36,25 @@ The following questions do not comprise an exhaustive list. They serve to scope,
 4) Address the temporal dimension, by trying to understand if there are any evolutions or differences within different seasons and different years.
 5) Address the spatial dimension, by investigating if there are disparities between states and countries.
 
-## Size Index
+## Datasets
+To answer those questions we used the following datasets:
+- `BeerAdvocate` (given to us): beer reviews from all over the world over a period that ranges between 2001 and 2017, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/)
+- `RateBeer` (given to us): beer reviews from all over the world over a period that ranges between 2001 and 2017, collected on the website [RateBeer.com](https://www.ratebeer.com/ratebeerbest/)
+
+## Methods
+In this section, we will give an overview of the preprocessing, processing, and the data analysis part that had to be done to answer our RQs. Moreover, we will explain the problem-solving process as well as the feasibility of each task. 
+
+#### Size Index
 To numerically evaluate the size of a brewery, we built an index based on the following formula:
 ```math
 Size = \alpha N_r + \beta N_b + \gamma N_t
 ```
 With $N_r =$ number of reviews, $N_b =$ number of beers produced, $N_t =$ number of different types of beer produced.
+#### Relationship between brewery size and perceived quality of the products
+#### Analysis of specialization of reviewers compared to brewery size
+#### Temporal dimension
+#### Spatial dimension
 
-## Datasets and Methods
-- The reviews under analysis come from two different rating sites, `BeerAdvocate` and `RateBeer`, with thousands of reviews that span in a period from 2001 to 2017.
 
 
 ## Authors
@@ -54,6 +65,21 @@ The `ToDoLeGAx` team is composed of:
 - Leonardo Trentini: [@LeonardoTrentini](https://github.com/leotrentini22)
 - Gabriele D'Angeli: [@GabrieleDAngeli](https://github.com/gabrieledangeli)
 - Axel Beguelin: [@AxelBeguelin](https://github.com/AxelBegue)
+
+## Organization within the team
+
+
+|Task                        |Responsibility *             |Timeline             |
+|----------------------------|-----------------------------|-----------------------------|
+|Relationship brewery size - perceived quality | T, A |  $6^{th}$ December  |
+|Analysis of specialization of reviewers compared to brewery size      |  |   $9^{th}$ December  |
+|Temporal dimension                           | L, F |   $12^{th}$ December  |
+|Spatial dimension                           |   |    $15^{th}$ December  |
+|Website                                            | T, L |    $19^{th}$ December  |
+|Data story writing                                 | T, D, L, G, A |   $22^{th}$ December  |
+
+*T = Tom, D = Dong, L = Leonardo, G = Gabriele, A = Axel
+
 
 ## References
 
