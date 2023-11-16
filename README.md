@@ -41,6 +41,10 @@ To answer those questions we used the following datasets:
 - `BeerAdvocate` (given to us): beer reviews from all over the world over a period that ranges between 2001 and 2017, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/)
 - `RateBeer` (given to us): beer reviews from all over the world over a period that ranges between 2001 and 2017, collected on the website [RateBeer.com](https://www.ratebeer.com/ratebeerbest/)
 
+For milestone 2, our focus lies on `BeerAdvocate` because:
+1) The dataset matched between BeerAdvocate and RateBeer almost share the same property with BeerAdvocate [[1]](#References). Hence, BeerAdvocate is assumed to contain representative features and statistics for both of the datasets.
+2) RateBeer could be utilized to validate some of our future conlusions and therefore verity the robustness of our models.
+
 ## Methods
 In this section, we will give an overview of the preprocessing, processing, and the data analysis part that had to be done to answer our RQs. Moreover, we will explain the problem-solving process as well as the feasibility of each task. 
 
@@ -69,14 +73,14 @@ The `ToDoLeGAx` team is composed of:
 ## Organization within the team
 
 
-|Task                        |Responsibility *             |Timeline             |
-|----------------------------|-----------------------------|-----------------------------|
-|Relationship brewery size - perceived quality | T, A |  $6^{th}$ December  |
-|Analysis of specialization of reviewers compared to brewery size      |  |   $9^{th}$ December  |
-|Temporal dimension                           | L, F |   $12^{th}$ December  |
-|Spatial dimension                           |   |    $15^{th}$ December  |
-|Website                                            | T, L |    $19^{th}$ December  |
-|Data story writing                                 | T, D, L, G, A |   $22^{th}$ December  |
+|Task                        | Responsibility * |Timeline             |
+|----------------------------|------------------|-----------------------------|
+|Relationship brewery size - perceived quality | T, A             |  $6^{th}$ December  |
+|Analysis of specialization of reviewers compared to brewery size      | D                |   $9^{th}$ December  |
+|Temporal dimension                           | L, F             |   $12^{th}$ December  |
+|Spatial dimension                           |                  |    $15^{th}$ December  |
+|Website                                            | T, L, D          |    $19^{th}$ December  |
+|Data story writing                                 | T, D, L, G, A    |   $22^{th}$ December  |
 
 *T = Tom, D = Dong, L = Leonardo, G = Gabriele, A = Axel
 
