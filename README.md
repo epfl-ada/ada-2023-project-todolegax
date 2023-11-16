@@ -80,19 +80,16 @@ This section's objective is to analyze the possible relationship between brewery
 
 The sentiment analysis of the reviews would be exploited through the usage of some natural language processing frameworks, such as !!!!!!!!! PUT SOMETHING !!!!!!!!
 
-#### Geographical Analysis
+#### Geographical and Temporal Analysis
 The goal is to gain insights into the geographical distribution of both breweries and reviewers within the dataset. Ultimately, we aim to calculate the distances between breweries and their respective reviewers. This analysis could potentially unveil distinctions between brewery types, revealing whether certain types of breweries attract predominantly local reviewers or have a more globally dispersed audience.
 
-We initialized our analysis by examining the geographical distribution of breweries in the dataset. To achieve this, we integrated the dataset with a map sourced from Geopandas.
-Ensuring alignment between the country names used in the map and those in the brewery dataset is crucial. To address this, we calculated the Hamming distance between them and substituted the brewery location with the closest match. In instances where no match was found, we opted to eliminate the corresponding brewery. For breweries located in the USA, the dataset includes information about the state. Consequently, we extended the same process to the states in the United States of America. 
+We initialized our analysis by examining the geographical distribution of breweries in the dataset. To achieve this, we integrated the dataset with a map sourced from `Geopandas`.
+Ensuring alignment between the country names used in the map and those in the brewery dataset is crucial. To address this, we calculated the Hamming distance between them and substituted the brewery location with the closest match. In instances where no match was found, we opted to eliminate the corresponding brewery. For breweries located in the United States of America, the dataset includes information about the state. Consequently, we extended the same process to the states in the USA. 
 We then explored the Top 10 countries with the highest number of breweries to gain insights into the global distribution of brewing establishments. Additionally, we visualized the global distribution of breweries to gain a comprehensive understanding of their geographical spread.
 
 After applying a similar analysis to reviewers data, we explored the relative distance between the reviewer and the brewery for each review, aiming to provide insights into how the popularity of a brewery is distributed globally.
 
-#### Temporal Analysis
-In this section, our aim is to investigate the temporal evolution of the beer market from the perspective of user ratings and reviews. Aligned with our interest in how brewery size and popularity matter, we pay specific attention to how the ratings and reviews are distributed among breweries.
-
-In the notebook, we sketched out a first draft of the analysis. The final goal would be to see if we can find any dynamic in the indices defined by the metrics, and therefore if there are any patterns or evolutions in popularity and quality perception from users, both through the years but also in different periods of the year.
+In the notebook, we sketched out also a first draft of the **temporal analysis**. The final goal would be to see if we can find any dynamic in the indices defined by the metrics, and therefore if there are any patterns or evolutions in popularity and quality perception from users, both through the years but also in different periods of the year.
 
 #### Analysis of specialization of reviewers compared to brewery size and popularity
 In this part of the analysis, we aim to inspect whether larger or popular breweries might lean to please a broader and less sophisticated consumer base, while smaller breweries may craft more specialized, polarizing products that resonate with a niche audience of enthusiasts.
