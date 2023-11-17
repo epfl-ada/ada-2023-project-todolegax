@@ -23,80 +23,75 @@
 </details>
 
 ## Abstract
-Customers rely increasingly on product rating websites for making purchase decisions, and it has been proved that when rating a product, customers may be biased to follow other customers’ previous ratings of the same product (this phenomenon is know as "herding effect", see West et al. [[1]](#References)).
+Customers are increasingly relying on **product rating** websites to inform their purchasing decisions. It has been demonstrated that when customers rate a product, they often exhibit a **tendency to be influenced by the previous ratings** of other customers, a phenomenon known as the **_herding effect_**, (see West et al. [[1]](#References)).
 
-However, it is still an open research question to understand how ratings might be impacted by the scale and the reputation of the vendor. By using data coming from beers' reviews websites, our goal is to analyze the relationship between the vendor size and popularity (breweries in this case), and the perceived quality of their products, determined through sentiment analysis of reviews. 
-By quantifying brewery size and popularity using [predefined metrics](#Metrics-Definition) and extracting sentiment from textual reviews, we aim to discern if there exists a correlation between these factors. Additionally, we seek to investigate the behavior of different consumer bases, addressing also the temporal dimension (how these phenomena have evolved through the years, but also through the seasons within the same year) and the spatial dimension (how these relationships differs through states and countries).
+Despite this, an unresolved research question revolves around comprehending **how ratings might be impacted by the scale and the reputation of the vendor**. Utilizing data sourced from beer reviews websites, our objective is to investigate the **connection** between the **size and fame of vendors** (specifically, breweries) and **the perceived quality** of their products.
+
+Through the quantification of brewery size and popularity using **predefined metrics** and the **extraction of sentiment** from textual reviews, our aim is to ascertain whether a correlation exists between vendor size and notoriety and perceived product quality. Additionally, we plan to **explore the behaviors** of diverse consumer bases, considering **temporal dimensions** (how these phenomena have evolved over the years and seasons within the same year) and **spatial dimensions** (how these relationships differ across states and countries).
 
 ## Research Questions
-The following questions do not comprise an exhaustive list. They serve to scope, inspire, and guide the analysis.
-
-1) Probe if there exists any relationship between brewery size, beer popularity and the perceived quality of their products.
-2) Investigate whether larger breweries tend to please a broader, potentially less sophisticated consumer base, while smaller breweries may craft more specialized, polarizing products that resonate with a niche audience of enthusiasts.
-3) Find if there exists any dynamics between brewery size and popularity, consumer appeal, and product quality within the beer industry.
-4) Address the temporal dimension, by trying to understand if there are any evolutions or differences within different seasons and different years.
-5) Address the spatial dimension, by investigating if there are disparities between states and countries.
+1) Is there any relationship between brewery size and popularity and the perceived quality of their products ?
+2) Do larger breweries tend to please a broader, potentially less sophisticated consumer base, while smaller breweries may craft more specialized, polarizing products, that resonate with a niche audience of enthusiasts ?
+3) Is there any dynamics between brewery size and popularity, consumer appeal, and product quality within the beer industry ?
+4) Are there any evolutions or differences over the years ?
+5) Do popular and/or big breweries tend to please a broader audience (spatial dimension) than less popular and/or smaller ones ?
 
 ## Datasets
-To answer those questions we used the following datasets:
-- `BeerAdvocate` (given to us): beer reviews from all over the world over a period that ranges between 2001 and 2017, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/)
+The following datasets are used:
+- `BeerAdvocate`: beer reviews from all over the world over a period that ranges between 1996 and 2017, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/)
 - `RateBeer` (given to us): beer reviews from all over the world over a period that ranges between 2001 and 2017, collected on the website [RateBeer.com](https://www.ratebeer.com/ratebeerbest/)
 - `1:110m Cultural Vectors`: Dataset with a map sourced from Geopandas (https://www.naturalearthdata.com/downloads/110m-cultural-vectors/).
 - `GEOJSON AND KML DATA FOR THE UNITED STATES` : Geographical data for the United States (https://eric.clst.org/tech/usgeojson/)
 
 For milestone 2, our focus lies on `BeerAdvocate` because:
 1) The dataset matched between BeerAdvocate and RateBeer almost shared the same properties with BeerAdvocate [[1]](#References). Hence, BeerAdvocate is assumed to contain representative features and statistics for both of the datasets.
-2) RateBeer could be used to validate some of our future conclusions and therefore verity the robustness of our models. 
+2) RateBeer could be used to validate some of our future conclusions and therefore verify the robustness of our models. 
 
 ## Metrics Definition
-In our analysis, we introduce *two key metrics* to quantitatively assess the characteristics of breweries: Size Metrics and Popularity Metrics.
+We introduce **two key metrics** to quantitatively **assess the characteristics of breweries**: Size Metrics and Popularity Metrics. Since we don't have data about the revenue or number of liter produced by the brewery, we decided to base ourself on variable present in the dataset to construct these metrics. Some verification will be done by hand, by searching information about some breweries on the web to assess the quality of the metrics and to correct the coefficients if needed.
 
-#### Size Metric
-To numerically evaluate the size of a brewery, we built an index based on the following formula:
-```math
-Size = \alpha N_r + \beta N_b + \gamma N_t
-```
-With $N_r =$ number of reviews, $N_b =$ number of beers produced, $N_t =$ number of different types of beer produced.
+####  **Size Metrics**
 
-#### Popularity Metric
-At the same time, to numerically evaluate the popularity of a brewery, we built an index based on the following formula:
-```math
-Popularity = \frac{N_r}{N_b}
-```
+$$ \text{Size} = \alpha N_r + \beta N_b + \gamma N_t$$
+
+With:
+- $N_r =$ number of reviews normalized by the total number of reviews
+- $N_b =$ number of beers produced normalized by the total number of beers
+- $N_t =$ number of different types (style) of beer produced normalized by the total number of styles
+
+#### **Popularity Metrics**
+$$ \text{Popularity} = \dfrac{N_r}{N_b}$$
+
 With $N_r =$ number of reviews, $N_b =$ number of beers produced
 
-## Methods
-In this section, we will give an overview of the methods that will be used to answer our research questions. Moreover, we will explain the problem-solving process as well as the feasibility of each task.
 
-In this repository, you'll find a notebook where we formulate some preliminar analysis and start to address our research questions.
+Both metrics are normalized to get a value between 0 and 1.
+
+We are aware that these metrics do not fully represent the size and popularity of a brewery in its entireness, but they do provide an approximation based on available data.
+
+## Methods
 
 #### Cleaning and preprocessing
-Firstly we needed to clean and preprocess our dataset, by filtering and merging data. We also plotted some relevant distributions, in order to get a first visualization of the data in our possession. In particular, it was necessary to get insight into review length variation, as visualizing the distribution allowed us to understand the range and variability in review lengths. Analyzing review lengths served also as a quality check.
-
-Afterwards, we improved consistency by translating all non-English textual reviews. To this end, we used the language detection module `detect` of the `langdetect` library to initially identify the language of each review. Due to the considerable computation time required for language detection, we decided to keep the language identifier of each review in a separate dataset (`Review_lang`), together with the unique identifiers of the beer and the user. During this first analysis, we had also to address the problem of handling special characters. To solve this problem, we used the html.unescape function to convert the HTML entities and then removed the non-ASCII characters by encoding them in ASCII and decoding them again.
-
-Finally, we constructed the two metrics for our analysis, and visualize the distributions of breweries with respect to this metric size. We then compared the results obtained with both metrics, drawning some first conclusions.
+Initially, we cleaned and preprocessed the dataset by filtering and merging data, creating visualizations to understand review length variation for quality checking. We enhanced consistency by translating non-English reviews using language detection via the `langdetect` library. To manage computation time, we stored language identifiers separately in a dataset (`Review_lang`). Handling special characters involved using html.unescape and encoding non-ASCII characters to ASCII. Lastly, we created two metrics, visualized brewery distributions based on these metrics, and drew initial conclusions from the comparison.
 
 #### Relationship between brewery size, popularity and perceived quality of the products
-This section's objective is to analyze the possible relationship between brewery size and popularity and the perceived quality of their products. The idea would be to use both the numerical ratings given by the users and a sentiment analysis of the textual reviews on one hand, and the indices given by the metrics on the other hand, to see if we there exists any correlation or patterns.
+We aim to analyze the possible relationship between brewery size and popularity and the perceived quality of their products. The idea would be to use both the numerical ratings given by the users and a sentiment analysis of the textual reviews on one hand, and the indices given by the metrics on the other hand, to see if there exists any correlation or patterns.
 
-The sentiment analysis of the reviews would be exploited through the usage of some natural language processing frameworks, such as !!!!!!!!! PUT SOMETHING !!!!!!!!
+The sentiment analysis of the reviews would be exploited through the usage of some natural language processing frameworks, such as Python NLTK (natural language toolkit).
 
 #### Geographical and Temporal Analysis
-The goal is to gain insights into the geographical distribution of both breweries and reviewers within the dataset. Ultimately, we aim to calculate the distances between breweries and their respective reviewers. This analysis could potentially unveil distinctions between brewery types, revealing whether certain types of breweries attract predominantly local reviewers or have a more globally dispersed audience.
+The objective here is to analyze the geographical distribution of breweries and reviewers in the dataset, with a focus on calculating distances between breweries and their respective reviewers. This can reveal distinctions in brewery types, indicating whether certain types attract local or global audiences.
 
-We initialized our analysis by examining the geographical distribution of breweries in the dataset. To achieve this, we integrated the dataset with a map sourced from `Geopandas`.
-Ensuring alignment between the country names used in the map and those in the brewery dataset is crucial. To address this, we calculated the Hamming distance between them and substituted the brewery location with the closest match. In instances where no match was found, we opted to eliminate the corresponding brewery. For breweries located in the United States of America, the dataset includes information about the state. Consequently, we extended the same process to the states in the USA. 
-We then explored the Top 10 countries with the highest number of breweries to gain insights into the global distribution of brewing establishments. Additionally, we visualized the global distribution of breweries to gain a comprehensive understanding of their geographical spread.
+To begin, we integrated the dataset with a map using `Geopandas` to examine the geographical distribution of breweries. Alignment of country names between the map and dataset was ensured by calculating Hamming distances using `difflib` and substituting unmatched brewery locations or eliminating them. For U.S. breweries, a similar process was applied to states.
 
-After applying a similar analysis to reviewers data, we explored the relative distance between the reviewer and the brewery for each review, aiming to provide insights into how the popularity of a brewery is distributed globally.
+Top 10 countries with the most breweries were explored to understand global distribution. Visualization further provided insights into the global spread of breweries.
 
-In the notebook, we sketched out also a first draft of the **temporal analysis**. The final goal would be to see if we can find any dynamic in the indices defined by the metrics, and therefore if there are any patterns or evolutions in popularity and quality perception from users, both through the years but also in different periods of the year.
+After applying a similar analysis to reviewers data, the goal is to explore the relative distance between the reviewer and the brewery for each review and look for correlation between the distance and the size or popularity.
+
+The notebook includes a preliminary **temporal analysis** draft, aiming to identify patterns or evolutions in popularity and quality perception over the years and different periods.
 
 #### Analysis of specialization of reviewers compared to brewery size and popularity
-In this part of the analysis, we aim to inspect whether larger or popular breweries might lean to please a broader and less sophisticated consumer base, while smaller breweries may craft more specialized, polarizing products that resonate with a niche audience of enthusiasts.
-
-We plan to tackle this topic through the exploitation of 
+We will look if there is some correlation between the quality of reviews and the brewery size or popularity. The quality of review will be assesed by text analysis (vocabulary, length, completeness).
 
 
 ## Authors
@@ -110,11 +105,10 @@ The `ToDoLeGAx` team is composed of:
 
 ## Organization within the team
 
-
 |Task                        | Responsibility * |Timeline             |
 |----------------------------|------------------|-----------------------------|
-|Relationship brewery size - perceived quality | T, A             |  $6^{th}$ December  |
-|Analysis of specialization of reviewers compared to brewery size      | D, G                |   $9^{th}$ December  |
+|Relationship brewery size/popularity - perceived quality | T, A             |  $6^{th}$ December  |
+|Analysis of specialization of reviewers compared to brewery size/popularity      | D, G                |   $9^{th}$ December  |
 |Temporal dimension                           | L, G             |   $9^{th}$ December  |
 |Spatial dimension                           | T, A                |    $12^{th}$ December  |
 |Website                                            | L, D, T          |    $19^{th}$ December  |
