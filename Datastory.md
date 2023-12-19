@@ -12,7 +12,7 @@ Despite this, an unresolved research question revolves around comprehending **ho
 
 Through the quantification of brewery size and popularity using **predefined metrics** and the **extraction of sentiment** from textual reviews, we want to understand if a correlation exists between vendor size and notoriety and perceived product quality. Additionally, we want to **explore the behaviors** of diverse consumer bases, considering **temporal dimensions** (how these phenomena have evolved over the years and seasons within the same year) and **spatial dimensions** (how these relationships differ across states and countries).
 
-## ToDoLeGAx SA. team line-up
+## ToDoLeGAx team line-up
 In order to accomplish the goal, the Board of Directors at ToDoLeGAx SA. decided to create a new task force, specifically disegned for this project. Here is the line-up of our team:
 
 - Dong Chu: [@DongChu](https://github.com/chudonguestc), Head of the Web Development department
@@ -23,12 +23,19 @@ In order to accomplish the goal, the Board of Directors at ToDoLeGAx SA. decided
 
 ## Dive into our datasets
 
-- `BeerAdvocate`: beer reviews from all over the world over a period that ranges between 1996 and 2017, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/)
-- `1:110m Cultural Vectors`: Dataset with a map sourced from Geopandas (https://www.naturalearthdata.com/downloads/110m-cultural-vectors/).
-- `GEOJSON AND KML DATA FOR THE UNITED STATES` : Geographical data for the United States (https://eric.clst.org/tech/usgeojson/)
+The first step to dive into our story is to understand our datasets. Our main source of data is the `BeerAdvocate` dataset, that contains beer reviews from all over the world over a period that ranges between 1996 and 2017, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/).
+After the preprocessing, the dataset contains $42'923$ beers, $58'199$ users, $14'158$ breweries and a total of $2'587'598$ reviews.
+
+![cat](./plots/dataset_distrib_by_year.png)
+
+INSERT SOME PLOTS ABOUT DATASET DISTRIBUTIONS
+
+Two other datasets that will be helpful for our analysis, and in particular for the geographical investigation, are:
+- `1:110m Cultural Vectors`: dataset with a map sourced from Geopandas (https://www.naturalearthdata.com/downloads/110m-cultural-vectors/).
+- `GEOJSON AND KML DATA FOR THE UNITED STATES` : geographical data for the United States (https://eric.clst.org/tech/usgeojson/)
 
 ## Metrics Definition
-We introduce **a key metric** to quantitatively **assess the characteristics of breweries**: Size Metrics. Since we don't have data about the revenue or number of liter produced by the brewery, we decided to base ourself on variable present in the dataset to construct these metrics. Some verification will be done by hand, by searching information about some breweries on the web to assess the quality of the metric and to correct the coefficients if needed.
+To quantitatively **assess the characteristics of breweries**, we introduce a key metric, the **Size Metric**.
 
 ####  **Size Metrics**
 
@@ -39,9 +46,11 @@ With:
 - $N_b =$ number of beers produced normalized by the total number of beers
 - $N_t =$ number of different types (style) of beer produced normalized by the total number of styles
 
-The metric is normalized to get a value between 0 and 1.
+The metric is then normalized to get values between 0 and 1.
 
-## Part I: Is there any relationship between brewery size and popularity and the perceived quality of their products ?
+![cat](./plots/size_metric_distribution.jpg)
+
+## What is the relationship between brewery size and the perceived quality of their beers?
 
 ## Part II: Do larger breweries tend to please a broader, potentially less sophisticated consumer base, while smaller breweries may craft more specialized, polarizing products, that resonate with a niche audience of enthusiasts ?
 
