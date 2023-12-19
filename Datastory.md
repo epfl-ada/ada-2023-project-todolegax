@@ -54,7 +54,7 @@ The metric is then normalized to get values between 0 and 1.
 
 ![cat](./plots/average_rating_vs_size.png)
 
-<img src="./plots/average_rating_vs_size.png" alt="Cat" width="300" height="300">
+<img src="./plots/average_rating_vs_size.png" alt="Cat" width="400" height="250">
 
 We can also perform a regression analysis between the average rating and the size metric.
 
@@ -114,13 +114,17 @@ Now that we have gained insights into the distribution of breweries worldwide, w
 
 ![cat](./plots/distribution_reviewers_world.png)
 
+![cat](./plots/relative_distance_reviewers_breweries.png)
+
+![cat](./plots/distance_vs_size_metric.png)
+
 
 ## Part II: Do larger breweries tend to please a broader, potentially less sophisticated consumer base, while smaller breweries may craft more specialized, polarizing products, that resonate with a niche audience of enthusiasts ?
 
 ## Part III: Are there any evolutions or differences over the years ?
 
 ![cat](./plots/average_ratings_by_year.png)
-![cat](./plots/dataset_distrib_by_year.png)
+
 ![cat](./plots/trend_percentage_reviews.png)
 
 ## Part IV: Do popular and/or big breweries tend to please a broader audience (spatial dimension) than less popular and/or smaller ones ?
