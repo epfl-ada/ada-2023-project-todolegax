@@ -58,3 +58,33 @@ def haversine(lat1, lon1, lat2, lon2):
     distance = R * c
 
     return distance
+
+# Computes mean and std for size categories
+def compute_stats_for_categories(df,col): 
+    df_small_breweries = df[df['size_category']=='small']
+    df_medium_breweries = df[df['size_category']=='medium']
+    df_big_breweries = df[df['size_category']=='big']
+    means = []
+    std_devs = []
+    # Calculate mean and standard deviation for each dataframe
+    means.append(df_small_breweries[col].mean())
+    std_devs.append(df_small_breweries[col].std())
+
+    means.append(df_medium_breweries[col].mean())
+    std_devs.append(df_medium_breweries[col].std())
+
+    means.append(df_big_breweries[col].mean())
+    std_devs.append(df_big_breweries[col].std())
+
+    return means, std_devs
+
+def categorize_size(value):
+    if value < 0.4:
+        return 'small'
+    elif 0.3 <= value < 0.7:
+        return 'medium'
+    else:
+        return 'big'
+
+def normalize_column(column):
+    return column / column.max()
