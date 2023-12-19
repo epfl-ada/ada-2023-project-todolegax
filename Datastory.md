@@ -52,6 +52,11 @@ The metric is then normalized to get values between 0 and 1.
 
 ## What is the relationship between brewery size and the perceived quality of their beers?
 
+![cat](./plots/average_rating_vs_size.png)
+
+<img src="./plots/average_rating_vs_size.png" alt="Cat" width="300" height="200">
+
+
 ## Part II: Do larger breweries tend to please a broader, potentially less sophisticated consumer base, while smaller breweries may craft more specialized, polarizing products, that resonate with a niche audience of enthusiasts ?
 
 ## Part III: Are there any evolutions or differences over the years ?
