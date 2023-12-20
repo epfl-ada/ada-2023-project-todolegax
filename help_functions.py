@@ -1,4 +1,5 @@
 import difflib
+from math import radians, sin, cos, sqrt, atan2
 
 # Hamming distance function
 def find_closest_match(input_str, target_list):
