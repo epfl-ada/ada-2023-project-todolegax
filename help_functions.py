@@ -1,5 +1,6 @@
 import difflib
 from math import radians, sin, cos, sqrt, atan2
+from deep_translator import GoogleTranslator
 
 # Hamming distance function
 def find_closest_match(input_str, target_list):
@@ -89,3 +90,19 @@ def categorize_size(value):
 
 def normalize_column(column):
     return column / column.max()
+
+
+def translate_to_english(text, source='auto', target='en'):
+    """
+    Translates the input text to English.
+
+    Parameters:
+        text (str): The input text to be translated.
+        source (str): The source language (default is 'auto' for automatic detection).
+        target (str): The target language (default is 'en' for English).
+
+    Returns:
+        The translated text in English.
+    """
+    translated = GoogleTranslator(source=source, target=target).translate(text)
+    return translated
