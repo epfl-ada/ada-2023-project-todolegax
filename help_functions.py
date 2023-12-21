@@ -82,7 +82,7 @@ def compute_stats_for_categories(df,col):
 
 # Split in categories
 def categorize_size(value):
-    if value < 0.4:
+    if value < 0.3:
         return 'small'
     elif 0.3 <= value < 0.7:
         return 'medium'
