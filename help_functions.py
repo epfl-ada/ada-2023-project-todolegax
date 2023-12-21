@@ -108,3 +108,29 @@ def translate_to_english(text, source='auto', target='en'):
     """
     translated = GoogleTranslator(source=source, target=target).translate(text)
     return translated
+
+# Function to plot on a subplot
+def plot_on_subplot(ax, j):
+    for i in range(len(size) - 1):
+        # Plot background color spans for size categories
+        ax.axvspan(size[i], size[i + 1], color=colors[i], alpha=0.5)
+        
+        # Plot mean and standard deviation for each size category and year
+        ax.errorbar(mid[i], means[f"mean_{categories[i]}_{years_list[j]}"],
+                    yerr=stds[f"std_{categories[i]}_{years_list[j]}"], fmt='o-', color=dark_colors[i],
+                    ecolor=dark_colors[i], label='Mean and std rating ' + str(categories[i]),
+                    capsize=5, alpha=1.0)
+        
+        # Scatter plot for individual breweries' rating distribution
+        ax.scatter(dfs[f"df_{categories[i]}_breweries_{years_list[j]}"]['size_metrics'],
+                   dfs[f"df_{categories[i]}_breweries_{years_list[j]}"]['avg_rating'], color='darkgray', s=point_size)
+        
+        # Label each category
+        ax.text(mid[i], 1.7, labels[i], color=dark_colors[i], ha='center', va='center', fontsize=12)
+
+        # Set subplot properties
+        ax.set_title('Avg. rating distribution ' + str(years_list[j]))
+        ax.set_ylim([1.5, 5])
+        ax.set_xlim([0, 1])
+        ax.set_xlabel('Size metrics')
+        ax.set_ylabel('Avg. rating')
