@@ -9,7 +9,7 @@ def find_closest_match(input_str, target_list):
 
 # Replace name of location by the closest match from the geo dataframe
 def match_country_name(df,unique_loc,unique_state):
-    # Init dropped breweries
+    # Init dropped breweries (to motinor the dropped elements)
     dropped_brew = []
 
     # Loop through the 'brewery_country' column and replace values if needed
@@ -80,6 +80,7 @@ def compute_stats_for_categories(df,col):
 
     return means, std_devs
 
+# Split in categories
 def categorize_size(value):
     if value < 0.4:
         return 'small'
@@ -88,10 +89,11 @@ def categorize_size(value):
     else:
         return 'big'
 
+# Normalize metrics
 def normalize_column(column):
     return column / column.max()
 
-
+# English translation
 def translate_to_english(text, source='auto', target='en'):
     """
     Translates the input text to English.
