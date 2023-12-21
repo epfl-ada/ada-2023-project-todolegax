@@ -58,7 +58,7 @@ Firstly, we would like to understand if there is any perceivable correlation bet
 
 To give statistical relevance to our first impression, we can coarsely divide our breweries into 3 size categories ("small", "medium", "big"). By computing the mean and standard deviation of the ratings for each one of the 3 categories, we can then perform an hypothesis testing to see if there is some statistical differencens in terms of ratings.
 
-![cat](./plots/division_small_medium_big_breweries.png)
+![cat](./plots/avg_rating_sizecategories.png)
 
 ![cat](./plots/division_small_medium_big_breweries_division_years.png)
 
@@ -122,7 +122,7 @@ Now that we have examined the geographical distribution of breweries and reviewe
 
 We begin by calculating the centroid of each country (or each state, in the case of US). Subsequently, we add these centroid values to both the users and breweries dataframes
 
-![cat](./plots/relative_distance_reviewers_breweries.png)
+![cat](./plots/EDA_reviewer_distance_distribution.png)
 
 The graph showing the distribution of relative distances between reviewers and breweries for each review is quite diversified, with a large proportion of reviews between 0 and 10,000km, corresponding in notably to intra-USA reviews. Although this graph allows us to better visualize this distribution of relative distances, it should be noted that some distances exceeding 25'000km seem inconsistent and that it will be necessary in the future to correct this by potentially switching to GPS coordinates instead of the actual projection.
 
@@ -130,26 +130,27 @@ The graph showing the distribution of relative distances between reviewers and b
 
 It's now interesting to look at the relative distance of reviewers for a given brewery based on its **size** metric. This investigation would make it possible to discern whether a small local brewery receives a majority of reviews from nearby users, or whether a world-renowned brewery receives international reviews, resulting in a higher average distance.
 
-![cat](./plots/distance_vs_size_metric.png)
 
 ![cat](./plots/avg_review_distance_wrt_size_for_size_categories.png)
 
-![cat](./plots/hist2d_size_vs_distance.png)
 
 The graph above shows once again that the distribution of the average distance of reviews collected by breweries according to their size and popularity metrics is quite diverse. We see a majority of distances between 0 and 10'000km for a wide spectrum in terms of size metrics, and some seemingly inconsistent average distances (over 25'000km) which will have to be corrected later.
 
 With regard to the popularity index, an interesting observation is the line that seems to form around the average review distance of 10'000km and concerns popular breweries. In fact, this distance corresponds to the distance USA - Europe and would indicate that the most popular breweries located mainly in Europe are highly rated by the overwhelming majority of US reviewers.
 
-## Part III: Are there any evolutions or differences over the years ?
+## Are there any evolutions or differences over the years ?
 
-![cat](./plots/evolution_size_metric_over_years.png)
 
 ![cat](./plots/division_small_medium_big_breweries_division_years.png)
 
-MAYBE TO TAKE OUT?
-![cat](./plots/average_ratings_by_year.png)
 
-![cat](./plots/trend_percentage_reviews.png)
+![cat](./plots/review_distance_wrt_size_year.png)
+
+![cat](./plots/temporal_evolution_of_small_breweries.png)
+
+--> link to case study
+
+
 
 ## ToDoLeGAx team line-up
 In order to accomplish the goal, the Board of Directors at ToDoLeGAx SA. decided to create a new task force, specifically designed for this project. Here is the line-up of our team:
