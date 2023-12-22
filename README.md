@@ -2,7 +2,7 @@
 
 <br />
 <div align="center">
-<h1 align="center">Does size matter?</h1>
+<h1 align="center">Does size matter? 🍺</h1>
   <p align="center">
     Applied Data Analysis (CS-401)
   </p>
@@ -29,20 +29,20 @@
 
 </center>
 
-## Abstract
+## Abstract 🍻
 Customers are increasingly relying on **product rating** websites to inform their purchasing decisions. It has been demonstrated that when customers rate a product, they often exhibit a **tendency to be influenced by the previous ratings** of other customers, a phenomenon known as the **_herding effect_**, (see West et al. [[1]](#References)).
 
 Despite this, an unresolved research question revolves around comprehending **how ratings might be impacted by the scale of the vendor**. Utilizing data sourced from beer reviews websites, our objective is to investigate the **connection** between the **size of vendors** (specifically, breweries) and **the perceived quality** of their products.
 
 Through the quantification of brewery size using **predefined metric** and the **extraction of sentiment** from textual reviews, our aim is to ascertain whether a correlation exists between vendor size and notoriety and perceived product quality. Additionally, we plan to **explore the behaviors** of diverse consumer bases, considering **temporal dimensions** (how these phenomena have evolved over the years and seasons within the same year) and **spatial dimensions** (how these relationships differ across states and countries).
 
-## Research Questions
+## Research Questions 🔭
 - Is there any relationship between brewery size and the perceived quality of their products?
 - Do larger breweries tend to please a broader, potentially less sophisticated consumer base, while smaller breweries may craft more specialized, polarizing products, that resonate with a niche audience of enthusiasts?
 - Are there any evolutions or differences over the years?
 - Do big breweries tend to please a broader audience (spatial dimension) than smaller ones?
 
-## Datasets
+## Datasets 📁
 The following datasets are used:
 - `BeerAdvocate`: beer reviews from all over the world over a period that ranges between 1996 and 2017, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/)
 - `RateBeer` (given to us): beer reviews from all over the world over a period that ranges between 2001 and 2017, collected on the website [RateBeer.com](https://www.ratebeer.com/ratebeerbest/)
@@ -53,7 +53,7 @@ Our focus lies on `BeerAdvocate` because:
 1) The dataset matched between BeerAdvocate and RateBeer almost shared the same properties with BeerAdvocate [[1]](#References). Hence, BeerAdvocate is assumed to contain representative features and statistics for both of the datasets.
 2) `RateBeer` was then used to validate our conclusions and therefore verify the robustness of our models. 
 
-## Metrics Definition
+## Metrics Definition 📏
 In our analysis, we aim to introduce **two key metrics** to quantitatively assess the characteristics of breweries: 
 - **Size Metrics** 
 - **Popularity Metrics**
@@ -86,7 +86,7 @@ The popularity metric turned out to be significantly skewed in comparison to the
 
 Moreover, our study primarily aims to explore how the **size** influences beer reviews and perceived quality which is better encoded by the size metrics. To validate the quality of the size metric, we compare its values (for selected breweries) with data sourced from the web. This comparison is outlined below:
 
-## Methods
+## Methods 🛠️
 
 #### Cleaning and preprocessing
 Initially, we cleaned and preprocessed the dataset by filtering and merging data, creating visualizations to understand review length variation for quality checking. We enhanced consistency by translating non-English reviews using language detection via the `langdetect` library. To manage computation time, we stored language identifiers separately in a dataset (`Review_lang`). Handling special characters involved using html.unescape and encoding non-ASCII characters to ASCII. Lastly, we created two metrics, visualized brewery distributions based on these metrics, and drew initial conclusions from the comparison.
@@ -110,7 +110,7 @@ After applying a similar analysis to reviewers data, the goal was to explore the
 The notebook includes also a **temporal analysis**, through which we aimed to identify patterns or evolutions in popularity and quality perception over the years and different periods.
 Finally, we also identified a particular brewery that experienced a perceivable growth during the period taken into account, in order to see if we could measure any evolution also in ratings and basin of attraction of users during the years.
 
-## Authors
+## Authors 👨‍⚕️👩‍⚕️
 
 The `ToDoLeGAx` team is composed of:
 - Tom Fahndrich: [@TomFahndrich](https://github.com/tomfahndrich)  
@@ -119,7 +119,7 @@ The `ToDoLeGAx` team is composed of:
 - Gabriele D'Angeli: [@GabrieleDAngeli](https://github.com/gabrieledangeli)
 - Axel Beguelin: [@AxelBeguelin](https://github.com/AxelBegue)
 
-## Organization within the team
+## Organization within the team 🧠
 
 |Task                        | Responsibility * |Timeline             |
 |----------------------------|------------------|-----------------------------|
