@@ -14,7 +14,7 @@ Through the quantification of brewery size using a **predefined metric** and the
 
 ## Dive into our datasets
 
-The first step before tackling our story is to understand our datasets. Our main source of data is the `BeerAdvocate` dataset, that contains beer reviews from all over the world over a period that ranges between 1996 and 2017, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/).
+The first step before tackling our story is to understand our datasets. Our main source of data is the `BeerAdvocate` dataset, that contains beer reviews from all over the world over a period that ranges between $1996$ and $2017$, collected on the website [BeerAdvocate.com](https://www.beeradvocate.com/).
 After the preprocessing, the dataset contains $42'923$ beers, $58'199$ users, $14'158$ breweries and a total of $2'587'598$ reviews, with both textual contents and numerical ratings.
 
 ![cat](./plots/dataset_distrib_by_year.png)
