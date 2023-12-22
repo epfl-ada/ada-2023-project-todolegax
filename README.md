@@ -11,6 +11,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#Datastory">Datastory</a></li>
     <li><a href="#Abstract">Abstract</a></li>
     <li><a href="#Research-Questions">Research Questions</a></li>
     <li><a href="#Datasets">Datasets</a></li>
@@ -25,7 +26,7 @@
 ## Datastory
 <center>
 
-[👉 You always wanted to figure out if size matter ? 👈](https://chudonguestc.github.io/WhatATheme/#Introduction)
+[👉 Have you always wanted to figure out if size matters ? 👈](https://chudonguestc.github.io/DoesSizeMatter)
 
 </center>
 
@@ -55,8 +56,8 @@ Our focus lies on `BeerAdvocate` because:
 
 ## Metrics Definition 📏
 In our analysis, we aim to introduce **two key metrics** to quantitatively assess the characteristics of breweries: 
-- **Size Metrics** 
-- **Popularity Metrics**
+- **Size Metric** 
+- **Popularity Metric**
 
 The following cells present and compute these metrics. Given the absence of data regarding brewery revenue or the quantity of liters produced, we have chosen to rely on variables available in the dataset to formulate these metrics.
 
@@ -64,9 +65,9 @@ $$
 \begin{equation}
 \begin{aligned}
     \\
-    &\text{Size Metrics} = \alpha \log (N_r) + \beta \log (N_b) + \gamma \log (N_t) \\
+    &\text{Size Metric} = \alpha \log (N_r) + \beta \log (N_b) + \gamma \log (N_t) \\
     \\
-    &\text{Popularity Metrics} = \dfrac{\log (N_r)}{N_b} \\
+    &\text{Popularity Metric} = \dfrac{\log (N_r)}{N_b} \\
 \end{aligned}
 \end{equation}
 $$
@@ -74,17 +75,17 @@ $$
 With:
 - $N_r =$ number of reviews received during the year
 - $N_b =$ number of different beers that recieved reviews
-- $N_t =$ number of different types (style) of beers that recieved reviews
+- $N_t =$ number of different types (style) of beers that received reviews
 
-The coefficients $\alpha, \beta, \gamma$ are manually set to 5, 2, and 1, respectively. This way, we put more wheight on the number of reviews, because we expect a bigger brewery to receive more reviews than a smaller one. The metrics are calculated for each brewery annually. 
+The coefficients $\alpha, \beta, \gamma$ are manually set to $5$, $2$, and $1$, respectively. This way, we put more weight on the number of reviews, because we expect a large brewery to receive more reviews than a smaller one. The metrics are calculated for each brewery annually. 
 
-For each year, the result for each brewery is normalized by dividing it by the maximum value of the year. This normalization process yields a value between 0 and 1 for each brewery, with the largest brewery of the year assigned a size index of 1.
+For each year, the result for each brewery is normalized by dividing it by the maximum value of the year. This normalization process yields a value between $0$ and $1$ for each brewery, with the largest brewery of the year assigned a size index of 1.
 
 Finally, to assess the size and popularity globally, we define the "macro" metrics as the mean of the metrics over the years. This will allow for general analysis over the entire dataset.
 
-The popularity metric turned out to be significantly skewed in comparison to the size metric. Despite several unsuccessful attempts to adjust it, we have decided to **focus solely on the size metric**. The size metrics exhibits a more natural distribution, enabling a clear distinction between small and large breweries unlike the popularity metric. 
+The popularity metric turned out to be significantly skewed in comparison to the size metric. Despite several unsuccessful attempts to adjust it, we have decided to **focus solely on the size metric**. The size metric exhibits a more natural distribution, enabling a clear distinction between small and large breweries unlike the popularity metric. 
 
-Moreover, our study primarily aims to explore how the **size** influences beer reviews and perceived quality which is better encoded by the size metrics. To validate the quality of the size metric, we compare its values (for selected breweries) with data sourced from the web. This comparison is outlined below:
+Moreover, our study primarily aims to explore how the **size** influences beer reviews and perceived quality which is better encoded by the size metric. To validate the quality of the size metric, we compare its values (for selected breweries) with data sourced from the web. This comparison is outlined below:
 
 ## Methods 🛠️
 
@@ -103,7 +104,7 @@ The objective here is to analyze the geographical distribution of breweries and 
 
 To begin, we integrated the dataset with a map using `Geopandas` to examine the geographical distribution of breweries. Alignment of country names between the map and dataset was ensured by calculating Hamming distances using `difflib` and substituting unmatched brewery locations or eliminating them. For U.S. breweries, a similar process was applied to states.
 
-Top 10 countries with the most breweries were explored to understand global distribution. Visualization further provided insights into the global spread of breweries.
+Top $10$ countries with the most breweries were explored to understand global distribution. Visualization further provided insights into the global spread of breweries.
 
 After applying a similar analysis to reviewers data, the goal was to explore the relative distance between the reviewer and the brewery for each review and look for correlation between the distance and the size or popularity.
 
