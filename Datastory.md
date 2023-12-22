@@ -74,9 +74,9 @@ Firstly, we would like to understand if there is any perceivable correlation bet
 
 <img src="./plots/average_rating_vs_size.png" alt="Cat" width="400" height="250">
 
-By performing a linear regression analysis, we can clearly see that there is a positive linear correlation between the size metric and the average rating, with an high $R^2$ score. However, we must remain cautious with these results, as it is likely that other cofounders, not taken into account through our size metric, have though an impact on the average rating obtained by the breweries (it is possible that our size index does not explain everything).
+By performing a linear regression analysis, we can clearly see that there is a positive linear correlation between the size metric and the average rating. However, we must remain cautious with these results, as it is likely that other cofounders, not taken into account through our size metric, have though an impact on the average rating obtained by the breweries (it is possible that our size index does not explain everything).
 
-To give statistical relevance to our first impression, we can coarsely divide our breweries into 3 size categories ("small", "medium", "big"). By computing the mean and standard deviation of the ratings for each one of the 3 categories, we can then perform an hypothesis testing to see if there is some statistical differencens in terms of ratings.
+To give statistical relevance to our first impression, we can coarsely divide our breweries into 3 size categories (**"small", "medium", "big"**). By computing the mean and standard deviation of the ratings for each one of the 3 categories, we can then perform an hypothesis testing to see if there is some statistical differencens in terms of ratings.
 
 ![cat](./plots/avg_rating_sizecategories.png)
 
@@ -98,7 +98,7 @@ Untill now we have only looked at the numerical rating. But a review is (usually
 
 ![cat](./plots/review_length.png)
 
-As before, to give statistical relevance to our first analysis, we divide our breweries into 3 size categories ("small", "medium", "big"). By computing the mean and standard deviation of the ratings for each one of the 3 categories, we can then perform an hypothesis testing to see if there is some statistical differencens in terms of review length.
+As before, to give statistical relevance to our first analysis, we divide our breweries into 3 size categories (**"small", "medium", "big"**). By computing the mean and standard deviation of the ratings for each one of the 3 categories, we can then perform an hypothesis testing to see if there is some statistical differencens in terms of review length.
 
 By setting a null hypothesis $H_0$ : *There is no statistically significant difference in average review length between the breweries size categories.*, we can perform a t-test analysis to see if the size category of a brewery impacts the average review length obtained:
 
@@ -107,6 +107,16 @@ By setting a null hypothesis $H_0$ : *There is no statistically significant diff
 *T-statistic: -6.4931, P-value: 0.00000000* $\rightarrow$ *The difference in avg. review length is statistically significant between medium and big breweries.*
 
 We can see that the difference of review length are significant at the $0.05$ significance level. However, like in the rating case, it is interesting to see that the longest reviews are given to the small breweries. This shows that some small breweries have reviewers that left more sophisticated reviews than for larger breweries.
+
+## Does bigger breweries get more positive reviews ?
+It may seem quite straightforward that the size of the brewery reviewed tends to bias the way in which the product is judged. Similarly to the ratings, one might expect positive and negative sentiments for small breweries to exhibit a relatively even distribution, ranging from very negative to very positive, influenced by different tastes and potentially more divisive flavour profiles. 
+In contrast, for large breweries with a global presence, one might expect a tighter grouping of sentiment, indicating more refined and well-executed products.
+
+![cat](./plots/avg_compound_score_vs_size.png)
+
+the compound score derived from the **VADER** sentiment analysis. The composite score, ranging from -1 (indicating predominantly negative comments) to 1 (representing positive reviews), tends to show a broader spectrum for smaller breweries. This variation suggests that **reviews of smaller breweries cover a continuum of sentiment**, including both highly positive and potentially more critical comments.
+
+In contrast, larger breweries tend to show a more focused trend of sentiments in their reviews. The average composite score for these establishments often approaches 1, indicating a prevalence of positivity in the overall sentiment expressed. This could mean that larger breweries receive a higher percentage of positive reviews on average, helping to consolidate sentiment towards the positive end of the spectrum. **The narrower range of scores suggests a more consistent pattern in the reviews of larger breweries, potentially indicating a more uniformly positive perception among customers**. The positivity perceived in reviews therefore seems to be very similar in terms of tendency to the rating. 
 
 ## Does breweries size impact on their "basin of attraction"?
 
@@ -149,6 +159,9 @@ How its average rating and the distance of its reviewers has evolved over the ye
 For the first year taken into account, the brewery is still "small" (green area). Afterwards, the brewery experience $5$ years as a "medium-sized" company (blue area), by finally becoming "large" after $2008$. 
 
 We can clearly see that the average rating of this brewery experiences a monotone growth untill it becomes "large", stabilizing afterwards in a sort of plateau. On the other hand, the average distance of reviewers curve has a less straightforward trend, experiencing some up and downs all over the years. However, the general behaviour is still an increasing one also in this case. As its size increased, the fame of the brewery spread around and its famous beers started to attract reviewers from every corner of the country.
+
+## To conclude
+The analysis conducted by ToDoLeGAx Inc. on brewery sizes and their perceived quality unveils intriguing insights. Despite a positive correlation between brewery size and average ratings, nuances arise. Larger breweries tend to secure higher average ratings but exhibit less variability, while small-scale ones, although with more extreme variations, attain top ratings. The length of reviews also differs, with smaller breweries receiving longer and potentially more detailed reviews. Furthermore, the geographical impact on review distances reveals that smaller breweries tend to attract local reviewers, while larger ones draw a more diverse global audience. Temporally, while trends persist, changes occur as breweries evolve in size, impacting both ratings and reviewer distances. Ultimately, brewery size significantly influences perceived quality and global reach, showcasing the multifaceted nature of consumer perceptions.
 
 ## ToDoLeGAx team line-up
 In order to accomplish the goal, the Board of Directors at ToDoLeGAx SA. decided to create a new task force, specifically designed for this project. Here is the line-up of our team:
