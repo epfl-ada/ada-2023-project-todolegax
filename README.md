@@ -53,14 +53,16 @@ In our analysis, we aim to introduce **two key metrics** to quantitatively asses
 
 The following cells present and compute these metrics. Given the absence of data regarding brewery revenue or the quantity of liters produced, we have chosen to rely on variables available in the dataset to formulate these metrics.
 
-$\begin{equation}
+$$
+\begin{equation}
 \begin{aligned}
     \\
     &\text{Size Metrics} = \alpha \log (N_r) + \beta \log (N_b) + \gamma \log (N_t) \\
     \\
     &\text{Popularity Metrics} = \dfrac{\log (N_r)}{N_b} \\
 \end{aligned}
-\end{equation}$
+\end{equation}
+$$
 
 With:
 - $N_r =$ number of reviews received during the year
@@ -87,7 +89,7 @@ The goal was to analyze the possible relationship between brewery size and the p
 
 The **Sentiment Analysis** of text reviews also represents an important aspect of our investigation, as we want to **extract information from users feedback, trying to deduce what people think about a product from text only**.
 
-To conduct a Sentiment Analysis, we utilize the [VADER](https://github.com/cjhutto/vaderSentiment) (Valence Aware Dictionary and Sentiment Reasoner) library. This tool is a lexicon and rule-based sentiment analysis tool specifically designed to capture sentiments expressed in social media.
+To conduct a Sentiment Analysis, we utilize the [VADER](https://github.com/cjhutto/vaderSentiment) (Valence Aware Dictionary and sEntiment Reasoner) library. This tool is a lexicon and rule-based sentiment analysis tool specifically designed to capture sentiments expressed in social media.
 
 #### Geographical and Temporal Analysis
 The objective here is to analyze the geographical distribution of breweries and reviewers in the dataset, with a focus on calculating distances between breweries and their respective reviewers. This can reveal distinctions in brewery types, indicating whether certain types attract local or global audiences.
