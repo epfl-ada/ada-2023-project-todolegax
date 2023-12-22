@@ -46,7 +46,7 @@ Before proceeding with our analysis, to quantitatively **assess the characterist
 
 ####  **Size Metrics**
 
-$$ \text{Size} = \alpha*log(N_r) + \beta*log(N_b) + \gamma*log(N_t)$$
+$$ \text{Size} = \alpha log(N_r) + \beta log(N_b) + \gamma log(N_t) $$
 
 With:
 - $N_r =$ number of reviews normalized by the total number of reviews
@@ -148,7 +148,7 @@ How its average rating and the distance of its reviewers has evolved over the ye
 
 For the first year taken into account, the brewery is still "small" (green area). Afterwards, the brewery experience $5$ years as a "medium-sized" company (blue area), by finally becoming "large" after $2008$. 
 
-We can clearly see that the average rating of this brewery experiences a monotone growth untill it becomes "large", stabilizing afterwards in a sort of plateau. On the other hand, the average distance of reviewers curve has a less straightforward trend, experiencing some up and downs all over the years. However, the general behaviour is still an increasing one also in this case. As its size increased, the brewery started to attract reviewers from a larger distance.
+We can clearly see that the average rating of this brewery experiences a monotone growth untill it becomes "large", stabilizing afterwards in a sort of plateau. On the other hand, the average distance of reviewers curve has a less straightforward trend, experiencing some up and downs all over the years. However, the general behaviour is still an increasing one also in this case. As its size increased, the fame of the brewery spread around and its famous beers started to attract reviewers from every corner of the country.
 
 ## ToDoLeGAx team line-up
 In order to accomplish the goal, the Board of Directors at ToDoLeGAx SA. decided to create a new task force, specifically designed for this project. Here is the line-up of our team:
