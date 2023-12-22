@@ -22,6 +22,13 @@
   </ol>
 </details>
 
+## Datastory
+<center>
+
+[👉 You always wanted to figure out if size matter ? 👈](https://chudonguestc.github.io/WhatATheme/#Introduction)
+
+</center>
+
 ## Abstract
 Customers are increasingly relying on **product rating** websites to inform their purchasing decisions. It has been demonstrated that when customers rate a product, they often exhibit a **tendency to be influenced by the previous ratings** of other customers, a phenomenon known as the **_herding effect_**, (see West et al. [[1]](#References)).
 
